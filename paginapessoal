@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Pessoal - Maria Silva</title>
+
+    <!-- Link para o Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilo global */
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            margin-top: 50px;
+        }
+
+        .navbar {
+            background-color: #ff6b6b;
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+
+        .navbar-nav .nav-link {
+            margin-right: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcccb !important;
+        }
+
+        /* Imagem de Perfil */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff6b6b;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Títulos das seções */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Cards personalizados */
+        .card-custom {
+            background-color: #fff0f3;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Estilo para as seções */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .bg-light-custom {
+            background-color: #fff0f3;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            margin-right: 12px;
+            color: #ff6b6b;
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            margin: 15px;
+            color: #ff6b6b;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Rodapé fixo */
+        .footer {
+            background-color: #ff6b6b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Personalizando links */
+        .nav-link {
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #ffcccb !important;
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+    </style>
+
+    <script>
+        // Função para rolar suavemente para as seções
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('.nav-link');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    const targetId = link.getAttribute('href').substring(1); // Pega o id da seção
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Ajuste para uma rolagem mais suave
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Página Pessoal - Maria Silva</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apresentacao">Apresentação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dados-academicos">Dados Acadêmicos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactos">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conclusao">Conclusão</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção de Apresentação -->
+    <section id="apresentacao" class="section container py-5">
+        <div class="text-center">
+            <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="profile-img">
+        </div>
+        <h2 class="section-title">Apresentação</h2>
+        <div class="bg-light-custom">
+            <p>Olá, o meu nome é Maria Silva. Sou uma entusiasta de tecnologia e apaixonada por desenvolvimento web. Adoro
+                aprender novas linguagens de programação e explorar novas ferramentas que me ajudem a melhorar como
+                profissional. Acredito que a tecnologia pode transformar o mundo, e estou muito animada por fazer parte dessa
+                revolução.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Dados Acadêmicos -->
+    <section id="dados-academicos" class="section container py-5">
+        <h2 class="section-title">Dados Acadêmicos</h2>
+        <div class="bg-light-custom">
+            <ul>
+                <li>Licenciatura em Engenharia Informática - Universidade do Porto (2025-2029)</li>
+                <li>Pós-graduação em Desenvolvimento Web - Instituto Politécnico do Porto (2023)</li>
+                <li>Cursos online: JavaScript, React, e Desenvolvimento Full Stack</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção de Contactos -->
+    <section id="contactos" class="section container py-5">
+        <h2 class="section-title">Contactos</h2>
+        <div class="bg-light-custom">
+            <p>Se quiser entrar em contacto comigo, pode usar as seguintes informações:</p>
+            <ul>
+                <li><i class="bi bi-envelope-fill contact-icon"></i>Email: <a href="mailto:maria.silva@exemplo.com">maria.silva@exemplo.com</a></li>
+                <li><i class="bi bi-telephone-fill contact-icon"></i>Telefone: +351 912 345 678</li>
+                <li><i class="bi bi-linkedin contact-icon"></i>LinkedIn: <a href="https://www.linkedin.com/in/mariasilva" target="_blank">linkedin.com/in/mariasilva</a></li>
+            </ul>
+
+            <h4 class="text-center mt-4">Siga-me nas redes sociais:</h4>
+            <div class="text-center">
+                <a href="https://www.linkedin.com/in/mariasilva" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/mariasilva" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
+                <a href="https://twitter.com/mariasilva" target="_blank" class="social-icon"><i class="bi bi-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Conclusão -->
+    <section id="conclusao" class="section container py-5">
+        <h2 class="section-title">Conclusão</h2>
+        <div class="bg-light-custom">
+            <p>Estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente. Acredito que o
+                desenvolvimento web é uma área com grande potencial, e estou animada com as possibilidades de contribuir para
+                projetos inovadores no futuro. A tecnologia é a chave para resolver muitos dos problemas do mundo moderno, e
+                espero fazer a minha parte nessa jornada.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé fixo -->
+    <footer class="footer">
+        <p>&copy; 2025 Maria Silva. Todos os direitos reservados. <a href="mailto:maria.silva@exemplo.com">Entre em contato</a></p>
+    </footer>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
